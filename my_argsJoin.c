@@ -1,9 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_argsJoin.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/09 18:47:05 by aennaqad          #+#    #+#             */
+/*   Updated: 2024/01/09 19:56:04 by aennaqad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int	total_argsLen(int ac, char **av)
 {

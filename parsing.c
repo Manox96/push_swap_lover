@@ -6,19 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:04:57 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/03 18:21:22 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:57:05 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
-#include <stdio.h>
-
-
-// no other input than integers (ok)
-// no duplicates  (ok)
-// it should be able to read bash ./push_swap 2 3 "1 4  "  (ok)
-// Else, it should exit the program with "Error\n" in the error output.
 
 int	only_digit(char *str)
 {
@@ -37,23 +29,18 @@ int	only_digit(char *str)
 	}
 	return (1);
 }
-int	check_double_and_max_min_int(char **av)
+int	check_double(char **av)
 {
-	int i = 0;
-	while (av[i])
-	{
-		if (ft_atoi(av[i]) >= INT_MAX || ft_atoi(av[i]) <= INT_MIN)
-			return (0);
-		i++;
-	}
+	int i;
+	int j;
+
 	i = 0;
-	int j = 0;
 	while (av[i])
 	{
 		j = i + 1;
 		while (av[j])
 		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			if (my_atoi(av[i]) == my_atoi(av[j]))
 				return (0);
 			j++;
 		}
@@ -61,6 +48,7 @@ int	check_double_and_max_min_int(char **av)
 	}
 	return (1);
 }
+
 char **parsing(int ac, char **av)
 {
 	char	**splited_arg;
@@ -76,8 +64,7 @@ char **parsing(int ac, char **av)
 			print_err();
 		i++;
 	}
-	if (!check_double_and_max_min_int(splited_arg))
+	if (!check_double(splited_arg))
 		print_err();
 	return (splited_arg);
 }
-

@@ -6,14 +6,12 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/03 18:22:05 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:53:06 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 
 void	print_err()
 {
@@ -30,16 +28,26 @@ int	is_empty(char *str)
 		return (1);
 	return (0);
 }
-
-int main(int ac,char **av)
+void print_linkedList(t_stack *a)
 {
-	my_stack	*a;
-	my_stack	*b;
+		t_stack *curr = a;
+		printf("\033[0;103m{head}\033[0m\n");
+				printf("\033[1;94m  |   \n");
+		while (curr != NULL)
+		{
+			printf("\033[0;47m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
+			curr = curr->next;
+		}
+		printf("\033[0;103m|<---tail}\033[0m");
+		printf("\033[0;94m  | a linkedList created by aymane\n");
+}
+int main(int ac, char **av)
+{
+	t_stack	*a;
 	int		i;
 	char		**parsed_input;
 
 	a = NULL;
-	b = NULL;
 	i = 0;
 
 	if (ac < 2)
@@ -53,5 +61,8 @@ int main(int ac,char **av)
 			i++;
 		}
 		parsed_input = parsing(ac, av);
+		a = to_LinkedList(parsed_input);
+		sort_two_and_three(&a);
+		print_linkedList(a);
 	}
 }
