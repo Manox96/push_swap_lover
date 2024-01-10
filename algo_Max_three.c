@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/10 15:41:04 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:28:37 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,5 @@ void sort_two_and_three(t_stack **head)
 	else if (curr->pos == 2)
 		sort_two(head);
 	else if(curr->pos == 3)
-	{
-		puts("eeeeh we need to sort three numbers");
 		sort_three(head);
-	}
 }

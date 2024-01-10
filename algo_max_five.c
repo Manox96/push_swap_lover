@@ -6,14 +6,36 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:58:10 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/10 17:22:43 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:55:06 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int	check_is_sorted(t_stack	**head_a)
+{
+	t_stack	*curr_a;
+	t_stack	*nexto;
+
+	curr_a = *head_a;
+	nexto = curr_a->next;
+
+	while (curr_a->next != NULL)
+	{
+		if (curr_a->content > nexto->content)
+			return (0);
+		curr_a = curr_a->next;
+		nexto = curr_a->next;
+	}
+	return (1);
+}
 
 void sort_five(t_stack **head_a , t_stack **head_b, int pos)
 {
+	if (check_is_sorted(head_a))
+		return;
 	if (pos == 4)
 	{
 		push_b(head_a,head_b);
