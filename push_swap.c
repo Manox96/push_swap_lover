@@ -6,11 +6,12 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/09 19:53:06 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:18:12 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 
 void	print_err()
@@ -20,15 +21,16 @@ void	print_err()
 }
 int	is_empty(char *str)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '\0')
 		return (1);
 	return (0);
 }
-void print_linkedList(t_stack *a)
+void	print_linkedList(t_stack *a)
 {
 		t_stack *curr = a;
 		printf("\033[0;103m{head}\033[0m\n");
@@ -41,9 +43,11 @@ void print_linkedList(t_stack *a)
 		printf("\033[0;103m|<---tail}\033[0m");
 		printf("\033[0;94m  | a linkedList created by aymane\n");
 }
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
+	t_stack	*b;
+	t_stack	*curr_a;
 	int		i;
 	char		**parsed_input;
 
@@ -62,7 +66,19 @@ int main(int ac, char **av)
 		}
 		parsed_input = parsing(ac, av);
 		a = to_LinkedList(parsed_input);
-		sort_two_and_three(&a);
+		curr_a = a;
+		while (curr_a->next != NULL)
+			curr_a = curr_a->next;
+		if (curr_a->pos <= 3)
+		{
+			sort_two_and_three(&a);
+			// exit(1);
+		}
+		else if (curr_a->pos <= 5)
+		{
+			sort_five(&a,&b,curr_a->pos);
+			// exit(1);
+		}
 		print_linkedList(a);
 	}
 }

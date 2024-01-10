@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:12 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/09 19:55:42 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:23:09 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,22 @@ char	*joined_arg(int ac, char **av);
 //tools
 int	min_node(t_stack **head);
 int	size_list(t_stack **head);
+void	to_top_three(t_stack **head , int pos);
 void	add_back(t_stack **head,int value,int pos);
 void	add_front(t_stack **head_b,t_stack *node);
 void print_linkedList_two(t_stack *a);
+void	to_top_two(t_stack **head , int pos);
+void	update_index(t_stack **head);
 
 //action :
 void	swap_A(t_stack **head);
 void	retate_A(t_stack **head);
 void	reverse_retate(t_stack **head);
+void push_b(t_stack **head_a,t_stack **head_b);
+void push_a(t_stack **head_b,t_stack **head_a);
+
 
 //algo
 void sort_two_and_three(t_stack **head);
-
+void sort_five(t_stack **head_a , t_stack **head_b, int pos);
 #endif

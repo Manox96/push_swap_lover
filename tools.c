@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <stdio.h>
 
 void print_linkedList_two(t_stack *a)
 {
@@ -13,20 +14,28 @@ void print_linkedList_two(t_stack *a)
 		printf("\033[0;103m|<---tail}\033[0m");
 		printf("\033[0;94m  | a linkedList created by aymane\n");
 }
-void	to_top_three(t_stack **head , int pos)
+void	update_index(t_stack **head)
 {
-	t_stack *curr;
+	t_stack	*curr;
+	int	i;
 
+	i = 0;
 	curr = *head;
-
 	while (curr != NULL)
 	{
-		if ((*head)->pos == pos)
-			break;
-		reverse_retate(head);
+		++i;
+		curr->pos = i;
 		curr = curr->next;
 	}
 }
+void	to_top_three(t_stack **head , int pos)
+{
+	// not forget to handle case if pos not in linkedList
+	while (!((*head)->pos == pos))
+		retate_A(head);
+	// update_index(head);
+}
+
 int	min_node(t_stack **head)
 {
 	t_stack	*tmp;
