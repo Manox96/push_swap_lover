@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/10 17:28:37 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:07:16 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,19 @@ void sort_two(t_stack **head)
 void sort_two_and_three(t_stack **head)
 {
 	t_stack	*curr;
+	int	c;
 
+	c = 0;
 	curr = *head;
-	update_index(head);
-	while (curr->next != NULL)
+	while (curr != NULL)
+	{
+		c++;
 		curr = curr->next;
-	if (curr->pos == 1)
+	}
+	if (c == 1)
 		return;
-	else if (curr->pos == 2)
+	else if (c == 2)
 		sort_two(head);
-	else if(curr->pos == 3)
+	else if(c >= 3 && c <= 5)
 		sort_three(head);
 }

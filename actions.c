@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/10 18:52:09 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:15:51 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ void push_b(t_stack **head_a,t_stack **head_b)
 
 	if (*head_a == NULL)
 		return;
-	min_Node_pos = min_node(head_a);
-	size = size_list(head_a);
-	to_top_three(head_a,min_Node_pos);
+
+	to_top_of_node(head_a);
 
 	the_first = (*head_a);
 	curr_a = (*head_a)->next;
 	*head_a = curr_a;
 	add_front(head_b,the_first);
+	update_index(head_a);
 	write(1,"pb\n",3);
 	// printf("\033[1;36;40mpb\n");
 }
@@ -105,27 +105,3 @@ void push_a(t_stack **head_b,t_stack **head_a)
 	write(1,"pa\n",3);
 	// printf("\033[1;36;40mpa\n");
 }
-// make algo for 5 bb
-//hahaha i make it ;)
-
-
-
-// int main()
-// {
-// 	t_stack *head_a = NULL;
-
-// 	add_back(&head_a,1,1);
-// 	add_back(&head_a,2,2);
-// 	add_back(&head_a,3,3);
-// 	add_back(&head_a,5,4);
-// 	add_back(&head_a,4,5);
-// 	// add_back(&head_a,6,6);
-
-
-// 	print_linkedList_two(head_a);
-// 	printf("\n");
-
-// 	printf("\n\n");
-// 	// print_linkedList(head_b);
-
-// }

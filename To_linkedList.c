@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/09 19:57:45 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:18:29 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,25 @@ t_stack *to_LinkedList(char **av)
 	}
 	return (head);
 }
+void	to_top_three(t_stack **head)
+{
+	// not forget to handle case if pos not in linkedList
+	int min_Node_pos = min_node(head);
+	int size = size_list(head);
+
+	// while (!((*head)->pos == min_Node_pos))
+	// 	retate_A(head); old code
+
+	if (min_Node_pos <= size)
+	{
+		retate_A(head);
+	}
+	else if (min_Node_pos > size)
+	{
+		while ((*head)->pos != min_Node_pos)
+			reverse_retate(head);
+		// update_index(head);
+	}
+
+}
+

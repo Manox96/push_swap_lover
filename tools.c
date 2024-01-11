@@ -28,12 +28,21 @@ void	update_index(t_stack **head)
 		curr = curr->next;
 	}
 }
-void	to_top_three(t_stack **head , int pos)
+
+void	to_top_of_node(t_stack **head)
 {
 	// not forget to handle case if pos not in linkedList
-	while (!((*head)->pos == pos))
+	int min_Node_pos = min_node(head);
+	int size = size_list(head);
+
+	if (min_Node_pos == size / 2)
 		retate_A(head);
-	// update_index(head);
+	else if (min_Node_pos > size / 2)
+	{
+		while ((*head)->pos != min_Node_pos)
+			reverse_retate(head);
+	}
+
 }
 
 int	min_node(t_stack **head)

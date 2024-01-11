@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/10 18:53:17 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:17:16 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	print_err()
 {
-	write(2,"ErrorMe\n",8);
+	write(2,"Error\n",6);
 	exit(EXIT_FAILURE);
 }
 int	is_empty(char *str)
@@ -54,8 +54,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	i = 0;
 
-	// if (ac < 2)
-	// 	print_err();
+	if (ac < 2)
+		exit(EXIT_FAILURE);
 	if (ac >= 2)
 	{
 		while (i < ac)
@@ -72,15 +72,13 @@ int	main(int ac, char **av)
 		if (curr_a->pos <= 3)
 		{
 			sort_two_and_three(&a);
-			exit(1);
+			return 0;
 		}
-		else if (curr_a->pos <= 5)
+		if (curr_a->pos <= 5)
 		{
 			sort_five(&a,&b,curr_a->pos);
-			exit(1);
+			return 0;
 		}
 		// print_linkedList(a);
 	}
 }
-
-// ARG="3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG
