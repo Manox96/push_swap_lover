@@ -6,15 +6,14 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/11 13:07:16 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:21:02 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_three(t_stack **head)
+void	sort_three(t_stack **head)
 {
-
 	int a;
 	int b;
 	int c;
@@ -22,26 +21,25 @@ void sort_three(t_stack **head)
 	a = (*head)->content;
 	b = (*head)->next->content;
 	c = (*head)->next->next->content;
-
 	if (a > b && b < c && c > a)
-		swap_A(head);
+		swap_a(head);
 	else if (a > b && b > c)
 	{
-		swap_A(head);
-		reverse_retate(head);
+		swap_a(head);
+		reverse_retate_a(head);
 	}
 	else if (a < b && b > c && c > a)
 	{
-		swap_A(head);
-		retate_A(head);
+		swap_a(head);
+		retate_a(head);
 	}
 	else if (a > b && b < c && c < a)
-		retate_A(head);
+		retate_a(head);
 	else if (a < b && b > c && c < a)
-		reverse_retate(head);
+		reverse_retate_a(head);
 }
 
-void sort_two(t_stack **head)
+void	sort_two(t_stack **head)
 {
 	t_stack *curr;
 	int a;
@@ -50,14 +48,13 @@ void sort_two(t_stack **head)
 	curr = *head;
 	a = curr->content;
 	b = curr->next->content;
-
 	if (a > b)
-		swap_A(head);
+		swap_a(head);
 }
 void sort_two_and_three(t_stack **head)
 {
 	t_stack	*curr;
-	int	c;
+	int		c;
 
 	c = 0;
 	curr = *head;

@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/11 16:17:16 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:46:34 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_linkedList(t_stack *a)
 				printf("\033[1;94m  |   \n");
 		while (curr != NULL)
 		{
-			printf("\033[0;47m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
+			printf("\033[0;20m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
 			curr = curr->next;
 		}
 		printf("\033[0;103m|<---tail}\033[0m");
@@ -48,10 +48,11 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 	t_stack	*curr_a;
-	int		i;
+	int	i;
 	char		**parsed_input;
 
 	a = NULL;
+	b = NULL;
 	i = 0;
 
 	if (ac < 2)
@@ -72,12 +73,16 @@ int	main(int ac, char **av)
 		if (curr_a->pos <= 3)
 		{
 			sort_two_and_three(&a);
-			return 0;
+			// return 0;
 		}
 		if (curr_a->pos <= 5)
 		{
-			sort_five(&a,&b,curr_a->pos);
-			return 0;
+			sort_five(&a, &b, curr_a->pos);
+			// return (0);
+		}
+		if (curr_a->pos > 5)
+		{
+			sort_hundred(&a,&b);
 		}
 		// print_linkedList(a);
 	}

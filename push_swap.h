@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:12 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/11 14:12:46 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:28:13 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**ft_split(char const *s, char c);
 //*--------LinkedList magic -------*
 t_stack	*to_LinkedList(char **av);
 void	print_linkedList(t_stack *a);
-t_stack	*createNode(int value ,int pos);
+t_stack	*createNode(int value, int pos);
 char	*joined_arg(int ac, char **av);
 
 
@@ -49,21 +49,24 @@ char	*joined_arg(int ac, char **av);
 int	min_node(t_stack **head);
 int	size_list(t_stack **head);
 void	to_top_of_node(t_stack **head);
-void	add_back(t_stack **head,int value,int pos);
-void	add_front(t_stack **head_b,t_stack *node);
+void	add_back(t_stack **head, int value, int pos);
+void	add_front(t_stack **head_b, t_stack *node);
 void print_linkedList_two(t_stack *a);
-void	to_top_two(t_stack **head , int pos);
 void	update_index(t_stack **head);
+void	set_index_frm_0(t_stack **head);
 
 //action :
-void	swap_A(t_stack **head);
-void	retate_A(t_stack **head);
-void	reverse_retate(t_stack **head);
-void push_b(t_stack **head_a,t_stack **head_b);
-void push_a(t_stack **head_b,t_stack **head_a);
-
+void	swap_a(t_stack **head);
+void	retate_b(t_stack **head);
+void	retate_a(t_stack **head);
+void	reverse_retate_a(t_stack **head);
+void	reverse_retate_b(t_stack **head);
+void push_b(t_stack **head_a, t_stack **head_b);
+void push_a(t_stack **head_b, t_stack **head_a);
+void rr(t_stack **head_a,t_stack **head_b);
 
 //algo
-void sort_two_and_three(t_stack **head);
-void sort_five(t_stack **head_a , t_stack **head_b, int pos);
+void	sort_two_and_three(t_stack **head);
+void	sort_five(t_stack **head_a ,t_stack **head_b,int pos);
+void	sort_hundred(t_stack **head_a, t_stack **head_b);
 #endif

@@ -1,19 +1,6 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void print_linkedList_two(t_stack *a)
-{
-		t_stack *curr = a;
-		printf("\033[0;103m{head}\033[0m\n");
-				printf("\033[1;94m  |   \n");
-		while (curr != NULL)
-		{
-			printf("\033[0;47m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
-			curr = curr->next;
-		}
-		printf("\033[0;103m|<---tail}\033[0m");
-		printf("\033[0;94m  | a linkedList created by aymane\n");
-}
 void	update_index(t_stack **head)
 {
 	t_stack	*curr;
@@ -28,21 +15,35 @@ void	update_index(t_stack **head)
 		curr = curr->next;
 	}
 }
+void	set_index_frm_0(t_stack **head)
+{
+	t_stack	*curr;
+	int	i;
+
+	i = -1;
+	curr = *head;
+	while (curr != NULL)
+	{
+		++i;
+		curr->pos = i;
+		curr = curr->next;
+	}
+}
 
 void	to_top_of_node(t_stack **head)
 {
-	// not forget to handle case if pos not in linkedList
-	int min_Node_pos = min_node(head);
-	int size = size_list(head);
+	int min_Node_pos;
+	int size;
 
-	if (min_Node_pos == size / 2)
-		retate_A(head);
-	else if (min_Node_pos > size / 2)
+	min_Node_pos = min_node(head);
+	size= size_list(head);
+	if (min_Node_pos == (size / 2))
+		retate_a(head);
+	else if (min_Node_pos > (size / 2))
 	{
 		while ((*head)->pos != min_Node_pos)
-			reverse_retate(head);
+			reverse_retate_a(head);
 	}
-
 }
 
 int	min_node(t_stack **head)
@@ -58,8 +59,7 @@ int	min_node(t_stack **head)
 			min = tmp;
 		tmp = tmp->next;
 	}
-	// int x = min->pos;
-	return min->pos;
+	return (min->pos);
 }
 
 int	size_list(t_stack **head)
