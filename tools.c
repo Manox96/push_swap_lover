@@ -35,6 +35,8 @@ void	to_top_of_node(t_stack **head)
 	int min_Node_pos;
 	int size;
 
+	if (*head == NULL)
+		return;
 	min_Node_pos = min_node(head);
 	size= size_list(head);
 	if (min_Node_pos == (size / 2))

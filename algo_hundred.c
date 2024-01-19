@@ -15,13 +15,6 @@
 #include <stdlib.h> // for rand() function
 #include <time.h>
 
-void	update_pvs(t_stack **head_a, int *last_piv, int *pivot1, int *pivot2)
-{
-	*last_piv = *pivot1;
-	*pivot1 += size_list(head_a) / 3;
-	*pivot2 = size_list(head_a) / 6 + *pivot1;
-}
-
 int last_node(t_stack **head)
 {
 	t_stack *curr;
@@ -38,29 +31,28 @@ int last_node(t_stack **head)
 
 void	sort_hundred(t_stack **head_a, t_stack **head_b)
 {
-	set_index_frm_0(head_a);
-	int	lastPiv;
-	int	pivot1;
-	int	pivot2;
 
-	pivot1 = size_list(head_a) / 3;
-	pivot2 = size_list(head_a) / 6;
-	lastPiv = -1;
-	while (size_list(head_a) > 3)
+	// int chunk;
+	int step;
+	int chunk;
+
+	// chunk = size_list(head_a) / 5;
+	step = size_list(head_a) / 5;
+	chunk = size_list(head_a) / 5;
+	
+	while (size_list(head_a) != 0)
 	{
-		if (size_list(head_b) > 1
-			&& ((*head_a)->pos) > pivot1
-			&& (((*head_b)->pos) > lastPiv && ((*head_b)->pos) < pivot2))
-			rr(head_a,head_b);
-		else if ((size_list(head_b) > 1)
-			&& (((*head_b)->pos) > lastPiv && ((*head_b)->pos) < pivot2))
-			retate_b(head_b);
-		if (((*head_a)->pos) < pivot1)
-			push_b(head_a,head_b);
-		else
-			retate_a(head_a);
-		if (size_list(head_a) >= pivot1)
-			update_pvs(head_a ,&lastPiv, &pivot1, &pivot2);
+		while ( *head_a != NULL && (*head_a)->pos < step)
+		{
+			if ((*head_a)->pos < step - (chunk / 2))
+				push_b(head_a,head_b);
+			else
+			{
+				push_b(head_a,head_b);
+				retate_b(head_b);
+			}
+		}
+		step+=chunk;
 	}
 }
 
@@ -84,7 +76,7 @@ void	sort_hundred(t_stack **head_a, t_stack **head_b)
 
 // 	// sort_hundred(&head_a,&head_b);
 // 	printf("\n\t stack a :");
-// 	print_linkedList(head_a);
+// 	// print_linkedList(head_a);
 // 	printf("\n\t stack b :");
 // 	print_linkedList(head_b);
 // }

@@ -82,8 +82,9 @@ int	main(int ac, char **av)
 		}
 		if (curr_a->pos > 5)
 		{
+			set_index_frm_0(&a);
 			sort_hundred(&a,&b);
+			print_linkedList(b);
 		}
-		// print_linkedList(a);
 	}
 }

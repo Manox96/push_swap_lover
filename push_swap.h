@@ -61,7 +61,7 @@ void	retate_b(t_stack **head);
 void	retate_a(t_stack **head);
 void	reverse_retate_a(t_stack **head);
 void	reverse_retate_b(t_stack **head);
-void push_b(t_stack **head_a, t_stack **head_b);
+void	push_b(t_stack **head_a, t_stack **head_b);
 void push_a(t_stack **head_b, t_stack **head_a);
 void rr(t_stack **head_a,t_stack **head_b);
 
