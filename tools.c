@@ -35,8 +35,6 @@ void	to_top_of_node(t_stack **head)
 	int min_Node_pos;
 	int size;
 
-	if (*head == NULL)
-		return;
 	min_Node_pos = min_node(head);
 	size= size_list(head);
 	if (min_Node_pos == (size / 2))
@@ -52,7 +50,9 @@ int	min_node(t_stack **head)
 {
 	t_stack	*tmp;
 	t_stack	*min;
+	int	i;
 
+	i = 0;
 	tmp = *head;
 	min = tmp;
 	while (tmp != NULL)
@@ -103,4 +103,36 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+t_stack	*min_node_addrs(t_stack **head_a)
+{
+	t_stack *curr;
+	t_stack *min;
+
+	curr = *head_a;
+	while (curr && curr->is_visited == 1)
+		curr = curr->next;
+	min = curr;
+	while (curr)
+	{
+		if (curr->is_visited == 0 && curr->content < min->content)
+			min = curr;
+		curr = curr->next;
+	}
+	return min;
+}
+void	index_from_the_small(t_stack **head_a)
+{
+	t_stack	*min_node;
+	int	rank;
+
+	min_node = min_node_addrs(head_a);
+	rank = 0;
+	while (min_node != NULL)
+	{
+		min_node->rank = rank++;
+		min_node->is_visited = 1;
+		min_node = min_node_addrs(head_a);
+	}
 }
