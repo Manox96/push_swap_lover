@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:12 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/15 17:28:13 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:47:14 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 
 typedef struct s_stack
 {
-	// struct s_stack		*prev;
 	int				content;
+	int				rank;
+	int				is_visited;
 	int				pos;
 	struct s_stack		*next;
 }	t_stack;
@@ -48,12 +49,14 @@ char	*joined_arg(int ac, char **av);
 //tools
 int	min_node(t_stack **head);
 int	size_list(t_stack **head);
+void	index_from_the_small(t_stack **head_a);
 void	to_top_of_node(t_stack **head);
+t_stack	*min_node_addrs(t_stack **head_a);
 void	add_back(t_stack **head, int value, int pos);
 void	add_front(t_stack **head_b, t_stack *node);
 void print_linkedList_two(t_stack *a);
 void	update_index(t_stack **head);
-void	set_index_frm_0(t_stack **head);
+void	set_pos_frm_0(t_stack **head);
 
 //action :
 void	swap_a(t_stack **head);
@@ -61,7 +64,7 @@ void	retate_b(t_stack **head);
 void	retate_a(t_stack **head);
 void	reverse_retate_a(t_stack **head);
 void	reverse_retate_b(t_stack **head);
-void	push_b(t_stack **head_a, t_stack **head_b);
+void push_b(t_stack **head_a, t_stack **head_b);
 void push_a(t_stack **head_b, t_stack **head_a);
 void rr(t_stack **head_a,t_stack **head_b);
 

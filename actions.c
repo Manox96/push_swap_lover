@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/16 10:40:31 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:03:20 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	retate_a(t_stack **head)
 	t_stack	*first;
 	t_stack	*nexto;
 
+	if ((*head == NULL) || ((*head)->next == NULL))
+		return;
 	first = *head;
 	nexto = (*head)->next;
 	*head = nexto;
@@ -54,6 +56,8 @@ void	retate_b(t_stack **head)
 	t_stack	*first;
 	t_stack	*nexto;
 
+	if ((*head == NULL) || ((*head)->next == NULL))
+		return;
 	first = *head;
 	nexto = (*head)->next;
 	*head = nexto;

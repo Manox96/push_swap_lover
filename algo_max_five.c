@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:58:10 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/16 10:40:27 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:29:38 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,4 @@ void	sort_five(t_stack **head_a ,t_stack **head_b, int pos)
 		push_a(head_b, head_a);
 		push_a(head_b, head_a);
 	}
-}
+} 

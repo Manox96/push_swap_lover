@@ -15,7 +15,7 @@ void	update_index(t_stack **head)
 		curr = curr->next;
 	}
 }
-void	set_index_frm_0(t_stack **head)
+void	set_pos_frm_0(t_stack **head)
 {
 	t_stack	*curr;
 	int	i;

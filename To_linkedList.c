@@ -6,12 +6,13 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/15 16:14:55 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:21:12 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
+
 
 t_stack	*createNode(int value, int pos)
 {
@@ -51,6 +52,6 @@ t_stack	*to_LinkedList(char **av)
 	i = -1;
 	head = NULL;
 	while (av[++i])
-		add_back(&head,my_atoi(av[i]),i+1);
+		add_back(&head, my_atoi(av[i]), i+1);
 	return (head);
 }
