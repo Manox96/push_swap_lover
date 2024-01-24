@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/22 11:03:20 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:51:58 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	reverse_retate_a(t_stack **head)
 	t_stack *curr;
 	t_stack *last;
 
+	if ((*head == NULL) || ((*head)->next == NULL))
+		return;
 	curr = *head;
 	while (curr->next->next != NULL)
 	{
@@ -95,6 +97,8 @@ void	reverse_retate_b(t_stack **head)
 	t_stack *curr;
 	t_stack *last;
 
+	if ((*head == NULL) || ((*head)->next == NULL))
+		return;
 	curr = *head;
 	while (curr->next->next != NULL)
 	{
@@ -113,33 +117,29 @@ void	push_b(t_stack **head_a, t_stack **head_b)
 {
 	//enjoy bb
 	t_stack	*the_first;
-	t_stack	*curr_a;
+	t_stack	*second;
 
 	if (*head_a == NULL)
 		return;
 	the_first = (*head_a);
-	curr_a = (*head_a)->next;
-	*head_a = curr_a;
+	second = (*head_a)->next;
+	*head_a = second;
 	add_front(head_b,the_first);
 	write(1,"pb\n",3);
 	// printf("\033[1;36;40mpb\n");
 }
-void rr(t_stack **head_a,t_stack **head_b)
-{
-	retate_a(head_a);
-	retate_b(head_b);
-	write(1, "rr\n", 4);
-}
+
 void	push_a(t_stack **head_b, t_stack **head_a)
 {
-	t_stack	*ptr_to_last_b;
-	t_stack	*ptr_to_first_b;
+	t_stack	*the_first;
+	t_stack	*second;
 
-	ptr_to_last_b = (*head_b)->next;
-	ptr_to_first_b = (*head_b);
-	ptr_to_first_b->next = (*head_a);
-	(*head_a) = ptr_to_first_b;
-	(*head_b) = ptr_to_last_b;
+	if (*head_b == NULL)
+		return;
+	the_first = (*head_b);
+	second = (*head_b)->next;
+	*head_b = second;
+	add_front(head_a,the_first);
 	write(1,"pa\n",3);
 	// printf("\033[1;36;40mpa\n");
 }

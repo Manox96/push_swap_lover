@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/22 13:07:52 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/24 20:33:59 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_linkedList(t_stack *a)
 				printf("\033[1;94m  |   \n");
 		while (curr != NULL)
 		{
-			printf("\033[0;20m(%d)\033[0m\033[1;32m[%d]--",curr->rank,curr->content);
+			printf("\033[0;20m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
 			curr = curr->next;
 		}
 		printf("\033[0;103m|<---tail}\033[0m\n");

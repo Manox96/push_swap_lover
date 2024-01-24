@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:12 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/22 13:47:14 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/24 21:20:47 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	add_front(t_stack **head_b, t_stack *node);
 void print_linkedList_two(t_stack *a);
 void	update_index(t_stack **head);
 void	set_pos_frm_0(t_stack **head);
+int	check_is_sorted(t_stack	**head_a);
 
 //action :
 void	swap_a(t_stack **head);

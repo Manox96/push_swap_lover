@@ -36,7 +36,7 @@ void	to_top_of_node(t_stack **head)
 	int size;
 
 	min_Node_pos = min_node(head);
-	size= size_list(head);
+	size = size_list(head);
 	if (min_Node_pos == (size / 2))
 		retate_a(head);
 	else if (min_Node_pos > (size / 2))

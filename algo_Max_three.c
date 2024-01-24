@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/15 15:21:02 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/24 21:21:27 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	sort_three(t_stack **head)
 	int b;
 	int c;
 
+	if (check_is_sorted(head))
+		return;
 	a = (*head)->content;
 	b = (*head)->next->content;
 	c = (*head)->next->next->content;
