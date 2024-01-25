@@ -6,20 +6,18 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/24 20:33:59 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:33:55 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-
-void	print_err()
+void	print_err(void)
 {
-	write(2,"Error\n",6);
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
+
 int	is_empty(char *str)
 {
 	int	i;
@@ -31,30 +29,33 @@ int	is_empty(char *str)
 		return (1);
 	return (0);
 }
-void	print_linkedList(t_stack *a)
+
+void	sort(t_stack **a, t_stack **b)
 {
-		t_stack *curr = a;
-		printf("\033[0;103m{head}\033[0m\n");
-				printf("\033[1;94m  |   \n");
-		while (curr != NULL)
-		{
-			printf("\033[0;20m(%d)\033[0m\033[1;32m[%d]--",curr->pos,curr->content);
-			curr = curr->next;
-		}
-		printf("\033[0;103m|<---tail}\033[0m\n");
+	int	size;
+
+	size = size_list(a);
+	if (size <= 3)
+		sort_two_and_three(a);
+	else if (size >= 4 && size <= 5)
+		sort_five(a, b, size);
+	else if (size >= 6)
+	{
+		index_from_the_small(a);
+		sort_hundred(a, b);
+	}
 }
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack	*curr_a;
-	int	i;
-	char		**parsed_input;
+	int		i;
+	char	**parsed_input;
 
 	a = NULL;
 	b = NULL;
 	i = 0;
-
 	if (ac < 2)
 		exit(EXIT_FAILURE);
 	if (ac >= 2)
@@ -66,25 +67,7 @@ int	main(int ac, char **av)
 			i++;
 		}
 		parsed_input = parsing(ac, av);
-		a = to_LinkedList(parsed_input);
-		curr_a = a;
-		while (curr_a->next != NULL)
-			curr_a = curr_a->next;
-		if (curr_a->pos <= 3)
-		{
-			sort_two_and_three(&a);
-			return 0;
-		}
-		if (curr_a->pos <= 5)
-		{
-			sort_five(&a, &b, curr_a->pos);
-			return (0);
-		}
-		if (curr_a->pos > 5)
-		{
-			index_from_the_small(&a);
-			sort_hundred(&a,&b);
-			// print_linkedList(a);
-  		}
+		a = to_linkedlist(parsed_input);
+		sort(&a, &b);
 	}
 }

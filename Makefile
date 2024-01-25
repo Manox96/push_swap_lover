@@ -6,7 +6,7 @@
 #    By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 18:05:04 by aennaqad          #+#    #+#              #
-#    Updated: 2024/01/17 15:40:26 by aennaqad         ###   ########.fr        #
+#    Updated: 2024/01/25 16:40:08 by aennaqad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,16 @@ SRCS = To_linkedList.c \
 			actions.c \
 			algo_Max_three.c \
 			algo_max_five.c \
+			algo_hundred.c \
 			my_argsJoin.c \
 			my_atoi.c \
 			my_split.c \
 			parsing.c \
 			push_swap.c \
 			tools.c \
-			algo_hundred.c
+			tools_two.c \
+			tools_algo_hundred.c \
+			actions_two.c
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra

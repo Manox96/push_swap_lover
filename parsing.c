@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:04:57 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/09 19:57:05 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:53:35 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 int	only_digit(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 	{
-		// i == 0 to we need - or + at the beginning of number
 		if (i == 0 && (str[i] == '+' || str[i] == '-'))
-		{
 			if (ft_isdigit(str[i++]))
-					return (0);
-		}
+				return (0);
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
 	return (1);
 }
+
 int	check_double(char **av)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (av[i])
@@ -49,15 +49,14 @@ int	check_double(char **av)
 	return (1);
 }
 
-char **parsing(int ac, char **av)
+char	**parsing(int ac, char **av)
 {
 	char	**splited_arg;
-	int i;
+	int		i;
 
 	i = 0;
 	splited_arg = NULL;
-
-	splited_arg = ft_split(joined_arg(ac, av + 1),' ');   //[" '---' '---' '---' '---' ""]
+	splited_arg = ft_split(joined_arg(ac, av + 1), ' ');
 	while (splited_arg[i])
 	{
 		if (!(only_digit(splited_arg[i])))

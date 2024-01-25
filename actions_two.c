@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   actions_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 15:59:38 by aennaqad         ###   ########.fr       */
+/*   Created: 2024/01/25 15:57:55 by aennaqad          #+#    #+#             */
+/*   Updated: 2024/01/25 15:59:46 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
 
-void	swap_a(t_stack **head)
+void	push_b(t_stack **head_a, t_stack **head_b)
 {
-	t_stack	*curr;
-	t_stack	*nexto;
+	t_stack	*the_first;
+	t_stack	*second;
 
-	if ((*head == NULL) || ((*head)->next == NULL))
+	if (*head_a == NULL)
 		return ;
-	curr = *head;
-	nexto = curr->next;
-	curr->next = curr->next->next;
-	nexto->next = curr;
-	*head = nexto;
-	write(1, "sa\n", 3);
+	the_first = (*head_a);
+	second = (*head_a)->next;
+	*head_a = second;
+	add_front(head_b, the_first);
+	write(1, "pb\n", 3);
 }
 
-void	retate_a(t_stack **head)
+void	retate_b(t_stack **head)
 {
 	t_stack	*curr;
 	t_stack	*first;
@@ -47,24 +44,10 @@ void	retate_a(t_stack **head)
 	}
 	curr->next = first;
 	first->next = NULL;
-	write(1, "ra\n", 3);
+	write(1, "rb\n", 3);
 }
 
-void	push_a(t_stack **head_b, t_stack **head_a)
-{
-	t_stack	*the_first;
-	t_stack	*second;
-
-	if (*head_b == NULL)
-		return ;
-	the_first = (*head_b);
-	second = (*head_b)->next;
-	*head_b = second;
-	add_front(head_a, the_first);
-	write(1, "pa\n", 3);
-}
-
-void	reverse_retate_a(t_stack **head)
+void	reverse_retate_b(t_stack **head)
 {
 	t_stack	*curr;
 	t_stack	*last;
@@ -80,5 +63,5 @@ void	reverse_retate_a(t_stack **head)
 	curr->next = NULL;
 	last->next = *head;
 	*head = last;
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }

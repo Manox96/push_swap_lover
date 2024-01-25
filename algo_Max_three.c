@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/24 21:21:27 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:33:33 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	sort_three(t_stack **head)
 {
-	int a;
-	int b;
-	int c;
+	int	a;
+	int	b;
+	int	c;
 
 	if (check_is_sorted(head))
-		return;
+		return ;
 	a = (*head)->content;
 	b = (*head)->next->content;
 	c = (*head)->next->next->content;
@@ -43,9 +43,9 @@ void	sort_three(t_stack **head)
 
 void	sort_two(t_stack **head)
 {
-	t_stack *curr;
-	int a;
-	int b;
+	t_stack	*curr;
+	int		a;
+	int		b;
 
 	curr = *head;
 	a = curr->content;
@@ -53,22 +53,16 @@ void	sort_two(t_stack **head)
 	if (a > b)
 		swap_a(head);
 }
-void sort_two_and_three(t_stack **head)
-{
-	t_stack	*curr;
-	int		c;
 
-	c = 0;
-	curr = *head;
-	while (curr != NULL)
-	{
-		c++;
-		curr = curr->next;
-	}
-	if (c == 1)
-		return;
-	else if (c == 2)
+void	sort_two_and_three(t_stack **head)
+{
+	int		size;
+
+	size = size_list(head);
+	if (size == 1)
+		return ;
+	else if (size == 2)
 		sort_two(head);
-	else if(c >= 3 && c <= 5)
+	else if (size >= 3 && size <= 5)
 		sort_three(head);
 }

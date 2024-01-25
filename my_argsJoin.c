@@ -6,13 +6,13 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:05 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/11 17:13:30 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:51:50 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	total_argsLen(int ac, char **av)
+int	total_argslen(int ac, char **av)
 {
 	int	i;
 	int	size;
@@ -24,7 +24,6 @@ int	total_argsLen(int ac, char **av)
 		size += ft_strlen(av[i]);
 		i++;
 	}
-	//this for add space at †he total size
 	size += ac - 2;
 	return (size);
 }
@@ -32,14 +31,14 @@ int	total_argsLen(int ac, char **av)
 char	*joined_arg(int ac, char **av)
 {
 	char	*joined;
-	int	i;
+	int		i;
 	size_t	j;
-	int	k;
+	int		k;
 
 	i = 0;
 	j = 0;
 	k = 0;
-	joined = malloc((total_argsLen(ac,av) + 1) * sizeof(char));
+	joined = malloc((total_argslen(ac, av) + 1) * sizeof(char));
 	while (i < ac - 1)
 	{
 		j = 0;
