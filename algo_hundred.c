@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:42:33 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 16:34:09 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:46:03 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	go_to_b(t_stack **head_a, t_stack **head_b, int chunk, int step)
 			if ((*head_a) && (*head_a)->rank < (chunk))
 			{
 				if ((*head_a)->rank <= (chunk - (step / 2)))
-					push_b(head_a, head_b);
+					push_b(head_a, head_b, 1);
 				else
 				{
-					push_b(head_a, head_b);
-					retate_b(head_b);
+					push_b(head_a, head_b, 1);
+					rotate_b(head_b, 1);
 				}
 			}
 			else if (((*head_a) && (*head_a)->rank >= (chunk)))
-				retate_a(head_a);
+				rotate_a(head_a, 1);
 			c++;
 		}
 		if (check_chunk(head_a, chunk))
@@ -67,15 +67,15 @@ void	come_back_to_a(t_stack **head_a, t_stack **head_b)
 	if (check_where_in_stack(max_node->pos, second_max_node->pos, size))
 	{
 		max_to_top_of_b(head_b, max_node);
-		push_a(head_b, head_a);
+		push_a(head_b, head_a, 1);
 	}
 	else
 	{
 		second_max_to_top_of_b(head_b, second_max_node);
-		push_a(head_b, head_a);
+		push_a(head_b, head_a, 1);
 		max_to_top_of_b(head_b, max_node);
-		push_a(head_b, head_a);
-		swap_a(head_a);
+		push_a(head_b, head_a, 1);
+		swap_a(head_a, 1);
 	}
 }
 
@@ -114,5 +114,5 @@ void	sort_hundred(t_stack **head_a, t_stack **head_b)
 		size_b = size_list(head_b);
 	}
 	if (size_b == 1 && (*head_b))
-		push_a(head_b, head_b);
+		push_a(head_b, head_b, 1);
 }

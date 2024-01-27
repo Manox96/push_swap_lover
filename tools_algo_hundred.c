@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:09:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 16:13:42 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:46:03 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	max_to_top_of_b(t_stack **head_b, t_stack *max_node)
 	set_pos_frm_0(head_b);
 	if (max_node->pos < size / 2)
 		while ((*head_b) != max_node)
-			retate_b(head_b);
+			rotate_b(head_b, 1);
 	else
 		while ((*head_b) != max_node)
-			reverse_retate_b(head_b);
+			reverse_rotate_b(head_b, 1);
 }
 
 void	second_max_to_top_of_b(t_stack **head_b, t_stack *second_node)
@@ -55,10 +55,10 @@ void	second_max_to_top_of_b(t_stack **head_b, t_stack *second_node)
 	set_pos_frm_0(head_b);
 	if (second_node->pos < size / 2)
 		while ((*head_b) != second_node)
-			retate_b(head_b);
+			rotate_b(head_b, 1);
 	else
 		while ((*head_b) != second_node)
-			reverse_retate_b(head_b);
+			reverse_rotate_b(head_b, 1);
 }
 
 int	check_where_in_stack(int larg, int second_larg, int size_list)

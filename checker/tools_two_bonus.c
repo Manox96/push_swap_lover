@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_two.c                                        :+:      :+:    :+:   */
+/*   tools_two_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:46:27 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 14:45:44 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:34:20 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 int	ft_isdigit(int c)
 {
@@ -44,29 +44,13 @@ int	size_list(t_stack **head)
 	return (c);
 }
 
-void	to_top_of_node(t_stack **head)
-{
-	int		min_node_pos;
-	int		size;
-
-	min_node_pos = min_node(head);
-	size = size_list(head);
-	if (min_node_pos == (size / 2))
-		rotate_a(head, 1);
-	else if (min_node_pos > (size / 2))
-	{
-		while ((*head)->pos != min_node_pos)
-			reverse_rotate_a(head, 1);
-	}
-}
-
-void	add_front(t_stack **head_b, t_stack *node)
+void	add_front(t_stack **head, t_stack *node)
 {
 	t_stack	*curr;
 
-	if (!head_b || !node)
+	if (!head || !node)
 		return ;
-	curr = *head_b;
+	curr = *head;
 	node->next = curr;
-	*head_b = node;
+	*head = node;
 }

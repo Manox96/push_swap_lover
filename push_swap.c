@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 16:33:55 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:57:12 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ void	sort(t_stack **a, t_stack **b)
 	else if (size >= 4 && size <= 5)
 		sort_five(a, b, size);
 	else if (size >= 6)
-	{
-		index_from_the_small(a);
 		sort_hundred(a, b);
-	}
 }
 
 int	main(int ac, char **av)

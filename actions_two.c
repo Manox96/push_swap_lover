@@ -6,13 +6,30 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:57:55 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 15:59:46 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:25:56 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
 
-void	push_b(t_stack **head_a, t_stack **head_b)
+void	swap_b(t_stack **head, int p)
+{
+	t_stack	*curr;
+	t_stack	*nexto;
+
+	if ((*head == NULL) || ((*head)->next == NULL))
+		return ;
+	curr = *head;
+	nexto = curr->next;
+	curr->next = curr->next->next;
+	nexto->next = curr;
+	*head = nexto;
+	if (p == 1)
+		write(1, "sb\n", 3);
+}
+
+void	push_b(t_stack **head_a, t_stack **head_b, int p)
 {
 	t_stack	*the_first;
 	t_stack	*second;
@@ -23,10 +40,11 @@ void	push_b(t_stack **head_a, t_stack **head_b)
 	second = (*head_a)->next;
 	*head_a = second;
 	add_front(head_b, the_first);
-	write(1, "pb\n", 3);
+	if (p == 1)
+		write(1, "pb\n", 3);
 }
 
-void	retate_b(t_stack **head)
+void	rotate_b(t_stack **head, int p)
 {
 	t_stack	*curr;
 	t_stack	*first;
@@ -44,10 +62,11 @@ void	retate_b(t_stack **head)
 	}
 	curr->next = first;
 	first->next = NULL;
-	write(1, "rb\n", 3);
+	if (p == 1)
+		write(1, "rb\n", 3);
 }
 
-void	reverse_retate_b(t_stack **head)
+void	reverse_rotate_b(t_stack **head, int p)
 {
 	t_stack	*curr;
 	t_stack	*last;
@@ -63,5 +82,6 @@ void	reverse_retate_b(t_stack **head)
 	curr->next = NULL;
 	last->next = *head;
 	*head = last;
-	write(1, "rrb\n", 4);
+	if (p == 1)
+		write(1, "rrb\n", 4);
 }

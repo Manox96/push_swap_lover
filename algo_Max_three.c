@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:36 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 16:33:33 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:45:44 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,21 @@ void	sort_three(t_stack **head)
 	b = (*head)->next->content;
 	c = (*head)->next->next->content;
 	if (a > b && b < c && c > a)
-		swap_a(head);
+		swap_a(head, 1);
 	else if (a > b && b > c)
 	{
-		swap_a(head);
-		reverse_retate_a(head);
+		swap_a(head, 1);
+		reverse_rotate_a(head, 1);
 	}
 	else if (a < b && b > c && c > a)
 	{
-		swap_a(head);
-		retate_a(head);
+		swap_a(head, 1);
+		rotate_a(head, 1);
 	}
 	else if (a > b && b < c && c < a)
-		retate_a(head);
+		rotate_a(head, 1);
 	else if (a < b && b > c && c < a)
-		reverse_retate_a(head);
+		reverse_rotate_a(head, 1);
 }
 
 void	sort_two(t_stack **head)
@@ -51,7 +51,7 @@ void	sort_two(t_stack **head)
 	a = curr->content;
 	b = curr->next->content;
 	if (a > b)
-		swap_a(head);
+		swap_a(head, 1);
 }
 
 void	sort_two_and_three(t_stack **head)
