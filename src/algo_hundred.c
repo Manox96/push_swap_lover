@@ -6,12 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:42:33 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 14:46:03 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:15:51 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../headers/push_swap.h"
 
 int	check_chunk(t_stack **head_a, int chunk)
 {
@@ -31,7 +30,8 @@ void	go_to_b(t_stack **head_a, t_stack **head_b, int chunk, int step)
 {
 	int	c;
 
-	while ((*head_a))
+	set_pos_frm_0(head_a);
+	while (*head_a)
 	{
 		c = 0;
 		while (c < 1)
@@ -46,7 +46,7 @@ void	go_to_b(t_stack **head_a, t_stack **head_b, int chunk, int step)
 					rotate_b(head_b, 1);
 				}
 			}
-			else if (((*head_a) && (*head_a)->rank >= (chunk)))
+			else
 				rotate_a(head_a, 1);
 			c++;
 		}

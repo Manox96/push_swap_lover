@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   actions_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 15:25:05 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:49:10 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
+#include "../headers/checker_bonus.h"
 
 void	swap_a(t_stack **head, int p)
 {

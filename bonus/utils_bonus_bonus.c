@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 15:24:31 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 18:34:29 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:31 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/checker_bonus.h"
 
 void	rrr(t_stack **head_a, t_stack **head_b, int p)
 {

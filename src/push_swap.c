@@ -6,11 +6,12 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:05:19 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 14:57:12 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:47:32 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
+#include <stdlib.h>
 
 void	print_err(void)
 {
@@ -54,7 +55,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	i = 0;
 	if (ac < 2)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	if (ac >= 2)
 	{
 		while (i < ac)

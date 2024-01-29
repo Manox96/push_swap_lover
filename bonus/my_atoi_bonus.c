@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_atoi.c                                          :+:      :+:    :+:   */
+/*   my_atoi_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:24 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 15:52:04 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:31 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/checker_bonus.h"
+#include <limits.h>
 
 long	my_atoi(const char *str)
 {

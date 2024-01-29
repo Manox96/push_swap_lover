@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   To_linkedList.c                                    :+:      :+:    :+:   */
+/*   To_linkedList_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 16:21:09 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:31 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/checker_bonus.h"
 
 t_stack	*createnode(int value, int pos)
 {

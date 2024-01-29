@@ -6,12 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:24 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 16:20:41 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:29:54 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
-#include <limits.h>
+#include "../headers/push_swap.h"
 
 long	my_atoi(const char *str)
 {

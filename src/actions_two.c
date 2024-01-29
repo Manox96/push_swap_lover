@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:57:55 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 16:36:00 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:28:49 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/push_swap.h"
 #include <unistd.h>
 
 void	swap_b(t_stack **head, int p)

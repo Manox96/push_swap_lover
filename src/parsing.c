@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:04:57 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 16:21:04 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:29:54 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/push_swap.h"
 
 int	only_digit(char *str)
 {

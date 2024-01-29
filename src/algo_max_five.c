@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:58:10 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 16:06:35 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:29:54 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	check_is_sorted(t_stack **head_a)
 {

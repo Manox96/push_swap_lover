@@ -6,16 +6,12 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:23:33 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 18:34:09 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:31 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/checker_bonus.h"
 #include "get_next_line/get_next_line.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	is_sorted(t_stack **head_a)
 {
@@ -36,27 +32,27 @@ int	is_sorted(t_stack **head_a)
 
 void	check_actions(char *actions, t_stack **a, t_stack **b)
 {
-	if (strcmp("sa\n", actions) == 0)
+	if (my_strcmp("sa\n", actions) == 0)
 		swap_a(a, 0);
-	else if (strcmp("sb\n", actions) == 0)
+	else if (my_strcmp("sb\n", actions) == 0)
 		swap_b(b, 0);
-	else if (strcmp("pa\n", actions) == 0)
+	else if (my_strcmp("pa\n", actions) == 0)
 		push_a(b, a, 0);
-	else if (strcmp("pb\n", actions) == 0)
+	else if (my_strcmp("pb\n", actions) == 0)
 		push_b(a, b, 0);
-	else if (strcmp("ra\n", actions) == 0)
+	else if (my_strcmp("ra\n", actions) == 0)
 		rotate_a(a, 0);
-	else if (strcmp("rb\n", actions) == 0)
+	else if (my_strcmp("rb\n", actions) == 0)
 		rotate_b(b, 0);
-	else if (strcmp("rra\n", actions) == 0)
+	else if (my_strcmp("rra\n", actions) == 0)
 		reverse_rotate_a(a, 0);
-	else if (strcmp("rrb\n", actions) == 0)
+	else if (my_strcmp("rrb\n", actions) == 0)
 		reverse_rotate_b(b, 0);
-	else if (strcmp("rr\n", actions) == 0)
+	else if (my_strcmp("rr\n", actions) == 0)
 		rr(a, b, 0);
-	else if (strcmp("rrr\n", actions) == 0)
+	else if (my_strcmp("rrr\n", actions) == 0)
 		rrr(a, b, 0);
-	else if (strcmp("ss\n", actions) == 0)
+	else if (my_strcmp("ss\n", actions) == 0)
 		ss(a, b, 0);
 	else
 		print_err();
@@ -64,7 +60,7 @@ void	check_actions(char *actions, t_stack **a, t_stack **b)
 
 void	its_ok(t_stack **head_a, t_stack **head_b)
 {
-	if (*head_b && is_sorted(head_a))
+	if (*head_b == NULL && is_sorted(head_a))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

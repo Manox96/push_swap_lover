@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:46:27 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 18:34:20 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:30:31 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../headers/checker_bonus.h"
 
 int	ft_isdigit(int c)
 {

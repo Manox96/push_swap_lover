@@ -6,12 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:45:35 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 15:50:30 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:49:23 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../headers/push_swap.h"
 
 void	update_index(t_stack **head)
 {

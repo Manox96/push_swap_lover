@@ -6,7 +6,7 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 15:56:27 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 18:34:38 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:40:25 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		check_is_sorted(t_stack	**head_a);
 int		is_empty(char *str);
 void	add_back(t_stack **head, int value, int pos);
 void	add_front(t_stack **head_b, t_stack *node);
+int		my_strcmp(const char *s1, const char *s2);
 
 #endif

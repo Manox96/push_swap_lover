@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions_two.c                                      :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 15:57:55 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 15:25:56 by aennaqad         ###   ########.fr       */
+/*   Created: 2024/01/09 18:46:37 by aennaqad          #+#    #+#             */
+/*   Updated: 2024/01/29 16:44:18 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <unistd.h>
+#include "../headers/push_swap.h"
 
-void	swap_b(t_stack **head, int p)
+void	swap_a(t_stack **head, int p)
 {
 	t_stack	*curr;
 	t_stack	*nexto;
@@ -26,25 +25,10 @@ void	swap_b(t_stack **head, int p)
 	nexto->next = curr;
 	*head = nexto;
 	if (p == 1)
-		write(1, "sb\n", 3);
+		write(1, "sa\n", 3);
 }
 
-void	push_b(t_stack **head_a, t_stack **head_b, int p)
-{
-	t_stack	*the_first;
-	t_stack	*second;
-
-	if (*head_a == NULL)
-		return ;
-	the_first = (*head_a);
-	second = (*head_a)->next;
-	*head_a = second;
-	add_front(head_b, the_first);
-	if (p == 1)
-		write(1, "pb\n", 3);
-}
-
-void	rotate_b(t_stack **head, int p)
+void	rotate_a(t_stack **head, int p)
 {
 	t_stack	*curr;
 	t_stack	*first;
@@ -63,10 +47,25 @@ void	rotate_b(t_stack **head, int p)
 	curr->next = first;
 	first->next = NULL;
 	if (p == 1)
-		write(1, "rb\n", 3);
+		write(1, "ra\n", 3);
 }
 
-void	reverse_rotate_b(t_stack **head, int p)
+void	push_a(t_stack **head_b, t_stack **head_a, int p)
+{
+	t_stack	*the_first;
+	t_stack	*second;
+
+	if (*head_b == NULL)
+		return ;
+	the_first = (*head_b);
+	second = (*head_b)->next;
+	*head_b = second;
+	add_front(head_a, the_first);
+	if (p == 1)
+		write(1, "pa\n", 3);
+}
+
+void	reverse_rotate_a(t_stack **head, int p)
 {
 	t_stack	*curr;
 	t_stack	*last;
@@ -83,5 +82,5 @@ void	reverse_rotate_b(t_stack **head, int p)
 	last->next = *head;
 	*head = last;
 	if (p == 1)
-		write(1, "rrb\n", 4);
+		write(1, "rra\n", 4);
 }

@@ -6,11 +6,11 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:47:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/25 15:55:18 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:29:54 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 t_stack	*createnode(int value, int pos)
 {

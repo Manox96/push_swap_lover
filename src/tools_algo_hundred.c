@@ -6,11 +6,12 @@
 /*   By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:09:18 by aennaqad          #+#    #+#             */
-/*   Updated: 2024/01/27 14:46:03 by aennaqad         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:59:35 by aennaqad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
+#include <stdio.h>
 
 void	search(t_stack **head, t_stack **max_node, t_stack **second_max_node)
 {
