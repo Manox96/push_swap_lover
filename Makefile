@@ -5,75 +5,80 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aennaqad <aennaqad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/01 18:05:04 by aennaqad          #+#    #+#              #
-#    Updated: 2024/01/29 16:32:45 by aennaqad         ###   ########.fr        #
+#    Created: 2024/03/09 17:14:20 by aennaqad          #+#    #+#              #
+#    Updated: 2024/03/09 19:59:03 by aennaqad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 	src/To_linkedList.c \
-			src/actions.c \
-			src/algo_Max_three.c \
-			src/algo_max_five.c \
-			src/algo_hundred.c \
-			src/my_argsJoin.c \
-			src/my_atoi.c \
-			src/my_split.c \
-			src/parsing.c \
-			src/push_swap.c \
-			src/tools.c \
-			src/tools_two.c \
-			src/tools_algo_hundred.c \
-			src/actions_two.c
+SRCS = so_long_Mondatoy/so_long.c \
+			so_long_Mondatoy/tools_one.c \
+			so_long_Mondatoy/the_game.c \
+			so_long_Mondatoy/utils_game.c \
+			so_long_Mondatoy/tools_two.c \
+			so_long_Mondatoy/tool_game_three.c \
+			so_long_Mondatoy/tools_two_game.c\
+			so_long_Mondatoy/tools_two_paring.c\
+			so_long_Mondatoy/tools_game.c \
+			so_long_Mondatoy/tools_parsing.c \
+			so_long_Mondatoy/utils_solong.c \
+			so_long_Mondatoy/get_next_line/get_next_line.c \
+ 			so_long_Mondatoy/get_next_line/get_next_line_utils.c \
 
-SRCS_B = bonus/To_linkedList_bonus.c \
-			bonus/actions_bonus.c \
-			bonus/actions_two_bonus.c \
-			bonus/checker_bonus.c \
-			bonus/my_argsJoin_bonus.c \
-			bonus/my_atoi_bonus.c \
-			bonus/my_split_bonus.c \
-			bonus/parsing_bonus.c \
-			bonus/tools_two_bonus.c \
-			bonus/utils_bonus_bonus.c \
-			bonus/get_next_line/get_next_line.c \
-			bonus/get_next_line/get_next_line_utils.c \
+SRCS_B = so_longBonus/so_long_bonus.c \
+			so_longBonus/tools_parsing_bonus.c \
+			so_longBonus/tools_game_bonus.c \
+			so_longBonus/tools_one_bonus.c \
+			so_longBonus/tool_game_three_bonus.c \
+			so_longBonus/utils_game_bonus.c \
+			so_longBonus/the_game_bonus.c \
+			so_longBonus/utils_two_game_bonus.c \
+			so_longBonus/utils_game_three_bonus.c \
+			so_longBonus/tools_two_paring_bonus.c\
+			so_longBonus/animation_coin_bonus.c\
+			so_longBonus/game_utils_one_bonus.c\
+			so_longBonus/tools_two_bonus.c \
+			so_longBonus/tools_two_game_bonus.c\
+			so_longBonus/get_next_line_bonus/get_next_line.c \
+ 			so_longBonus/get_next_line_bonus/get_next_line_utils.c \
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
-NAME = push_swap
-NAME_BNS = checker
-AR = ar -rcs
-H_MOND = headers/push_swap.h
-H_BNS = headers/checker_bonus.h
+NAME = so_long
+NAME_B = so_long_bonus
+H_MOND = so_long_Mondatoy/so_long.h
+H_BONUS = so_longBonus/so_long_bonus.h
+H_GET_M = so_long_Mondatoy/get_next_line/get_next_line.h
+H_GET_B = so_longBonus/get_next_line_bonus/get_next_line.h
 
-# Colors
-GREEN = \033[0;32m
-RED = \033[0;31m
-RESET = \033[0m
+%_bonus.o: %_bonus.c $(H_BONUS) $(H_GET_B)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-%.o: %.c $(H_MOND) $(H_BNS)
+%.o: %.c $(H_MOND) $(H_GET_M)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
-bonus : $(NAME_BNS)
+bonus : $(NAME_B)
 
-$(NAME_BNS): $(OBJS_B)
-	$(CC) $(CFLAGS) $(OBJS_B) -o $(NAME_BNS)
+$(NAME_B): $(OBJS_B)
+	$(CC) $(CFLAGS) $(OBJS_B) -lmlx -framework OpenGL -framework AppKit -o $(NAME_B)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
-	$(RM) $(NAME)  $(NAME_BNS)
-
+	$(RM) $(NAME) $(NAME_B)
 
 re: fclean all
+	$(RM) $(OBJS) && clear
 
-.PHONY: all clean fclean re
+reb: fclean bonus
+	$(RM) $(OBJS_B) && clear
+
+.PHONY: clean
